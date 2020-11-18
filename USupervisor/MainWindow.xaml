@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:USupervisor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Background="#262742"
+        Title="USupervisor" Height="550" Width="1000">
     <Grid>
         
+
     </Grid>
 </Window>
