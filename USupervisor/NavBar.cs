@@ -7,7 +7,7 @@ using System.Windows.Controls;
 
 namespace USupervisor
 {
-    public sealed class NavBar
+    public sealed class NavBar : Control
     {
         private static NavBar instance = null;
         private static readonly object padlock = new object();
