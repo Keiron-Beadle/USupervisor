@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 namespace USupervisor.Pages
 {
-    public partial class LoginPage : Page
+    public partial class LoginPage
     {
         public LoginPage()
         {

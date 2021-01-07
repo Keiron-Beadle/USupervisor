@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using USupervisor.Pages;
+using Microsoft.Data.Sqlite;
 
 namespace USupervisor
 {
@@ -19,7 +21,10 @@ namespace USupervisor
     {
         public MainWindow()
         {
+            LoginPage page = new LoginPage();
+            SqliteConnectionStringBuilder s = DatabaseContext.Instance.GetConnectionString;
             InitializeComponent();
+            navigationFrame.Navigate(page);
         }
     }
 }

@@ -8,9 +8,10 @@
       Background="#262742"
       Title="USupervisor - Login" Height="550" Width="1000">
     <Grid>
-        
-        <Button x:Name="submitBtn" Margin="0,30,0,0" Content="Submit" HorizontalAlignment="Center" VerticalAlignment="Center" Width="105" Height="30"/>
-        <TextBox x:Name="emailBox" Margin="0,-100,0,0" HorizontalAlignment="Center" Height="22" TextWrapping="NoWrap" Text="Email" VerticalAlignment="Center" Width="180"/>
+        <TextBlock Text="Email:" HorizontalAlignment="Center" Foreground="Peru" VerticalAlignment="Center" FontSize="14" TextWrapping="NoWrap" Margin="-250,-100,0,0" FontFamily="Arial"/>
+        <TextBlock Text="Password:" HorizontalAlignment="Center" Foreground="Peru" VerticalAlignment="Center" FontSize="14" TextWrapping="NoWrap" Margin="-250,-40,0,0" FontFamily="Arial"/>
+        <TextBox x:Name="emailBox" Margin="0,-100,0,0" HorizontalAlignment="Center" Height="22" TextWrapping="NoWrap" VerticalAlignment="Center" Width="180"/>
         <PasswordBox x:Name="passwordBox" Margin="0,-40,0,0" Width="180" Height="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="submitBtn" Margin="0,30,0,0" Content="Submit" HorizontalAlignment="Center" VerticalAlignment="Center" Width="105" Height="30"/>
     </Grid>
 </Page>

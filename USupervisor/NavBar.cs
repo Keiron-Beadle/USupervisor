@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace USupervisor
 {
-    public sealed class NavBar : Control
+    public sealed class NavBar : FrameworkElement
     {
         private static NavBar instance = null;
         private static readonly object padlock = new object();

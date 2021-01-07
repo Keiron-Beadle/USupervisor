@@ -9,9 +9,6 @@
         ResizeMode="NoResize"
         Title="USupervisor" Height="550" Width="1000">
     <Grid Name="mainGrid">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+        <Frame x:Name="navigationFrame" Width="990" Height="520"></Frame>
     </Grid>
 </Window>
