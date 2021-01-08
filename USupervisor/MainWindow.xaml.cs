@@ -21,7 +21,7 @@ namespace USupervisor
     {
         public MainWindow()
         {
-            SqliteConnectionStringBuilder s = DatabaseContext.Instance.GetConnectionString;
+            SqliteConnectionStringBuilder s = Database.Instance.GetConnectionString;
             InitializeComponent();
             navigationFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
             NavBar.Frame = navigationFrame;

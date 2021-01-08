@@ -87,13 +87,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Data.cs" />
-    <Compile Include="DatabaseContext.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="MeetingEntry.cs" />
     <Compile Include="NavBar.cs" />
     <Compile Include="Pages\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MeetingPage.xaml.cs">
+      <DependentUpon>MeetingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Users\Student.cs" />
     <Compile Include="Users\Supervisor.cs" />
@@ -115,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MeetingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

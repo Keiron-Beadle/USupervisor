@@ -61,7 +61,7 @@ namespace USupervisor.Pages
 
         private void FillUserData(User user, string email)
         {
-            using (var cnn = new SqliteConnection(DatabaseContext.Instance.GetConnectionString.ConnectionString))
+            using (var cnn = new SqliteConnection(Database.Instance.GetConnectionString.ConnectionString))
             {
                 cnn.Open();
 
@@ -81,7 +81,7 @@ namespace USupervisor.Pages
 
         private Tuple<int,string> InDatabase(string email, string password)
         {
-            using (var cnn = new SqliteConnection(DatabaseContext.Instance.GetConnectionString.ConnectionString))
+            using (var cnn = new SqliteConnection(Database.Instance.GetConnectionString.ConnectionString))
             {
                 cnn.Open();
 

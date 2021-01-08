@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace USupervisor
 {
-    class DatabaseContext
+    class Database
     {
-        private static DatabaseContext instance = null;
+        private static Database instance = null;
         private static readonly object padlock = new object();
        
         private static SqliteConnectionStringBuilder connectionString;
 
-        DatabaseContext()
+        Database()
         {
             connectionString = new SqliteConnectionStringBuilder();
             connectionString.DataSource = "UserData.db";
@@ -29,14 +29,14 @@ namespace USupervisor
             //}
         }
 
-        public static DatabaseContext Instance
+        public static Database Instance
         {
             get
             {
                 lock (padlock)
                 {
                     if (instance == null)
-                        instance = new DatabaseContext();
+                        instance = new Database();
                 }
                 return instance;
             }

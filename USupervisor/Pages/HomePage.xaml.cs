@@ -29,24 +29,24 @@ namespace USupervisor.Pages
             navBar.SetGrid(mainGrid);
 
             if (user is Supervisor)
-                BuildForSupervisor((Supervisor)user);
+                BuildForSupervisor();
             else if (user is Student)
-                BuildForStudent((Student)user);
+                BuildForStudent();
         }
 
-        private void BuildForStudent(Student student)
+        private void BuildForStudent()
         {
-            GetStudentData(student.Email);
+            GetStudentData();
         }
 
-        private void GetStudentData(string email)
+        private void GetStudentData()
         {
-            using (var cnn = new SqliteConnection(DatabaseContext.Instance.GetConnectionString.ConnectionString))
+            using (var cnn = new SqliteConnection(Database.Instance.GetConnectionString.ConnectionString))
             {
                 cnn.Open();
 
                 var selectCmd = cnn.CreateCommand();
-                email = "'" + email + "'";
+                string email = "'" + Data.User.Email + "'";
                 selectCmd.CommandText = ("SELECT * FROM Users WHERE email IS " + email);
                 using (var reader = selectCmd.ExecuteReader())
                 {
@@ -60,19 +60,19 @@ namespace USupervisor.Pages
             }
         }
 
-        private void BuildForSupervisor(Supervisor supervisor)
+        private void BuildForSupervisor()
         {
-            GetSupervisorData(supervisor.Email);
+            GetSupervisorData();
         }
 
-        private void GetSupervisorData(string email)
+        private void GetSupervisorData()
         {
-            using (var cnn = new SqliteConnection(DatabaseContext.Instance.GetConnectionString.ConnectionString))
+            using (var cnn = new SqliteConnection(Database.Instance.GetConnectionString.ConnectionString))
             {
                 cnn.Open();
 
                 var selectCmd = cnn.CreateCommand();
-                email = "'" + email + "'";
+                string email = "'" + Data.User.Email + "'";
                 selectCmd.CommandText = ("SELECT * FROM Users WHERE email IS " + email);
                 using (var reader = selectCmd.ExecuteReader())
                 {
