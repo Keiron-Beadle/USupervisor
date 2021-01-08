@@ -17,7 +17,16 @@ namespace USupervisor
         DatabaseContext()
         {
             connectionString = new SqliteConnectionStringBuilder();
-            connectionString.DataSource = "./UserData.db";
+            connectionString.DataSource = "UserData.db";
+
+            //using (var connection = new SqliteConnection(connectionString.ConnectionString))
+            //{
+            //    connection.Open();
+
+            //    var createTableCmd = connection.CreateCommand();
+            //    createTableCmd.CommandText = "CREATE TABLE Users (email VARCHAR(40), password VARCHAR(18))";
+            //    createTableCmd.ExecuteNonQuery();
+            //}
         }
 
         public static DatabaseContext Instance

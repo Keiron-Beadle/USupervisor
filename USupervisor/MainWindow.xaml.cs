@@ -21,9 +21,11 @@ namespace USupervisor
     {
         public MainWindow()
         {
-            LoginPage page = new LoginPage();
             SqliteConnectionStringBuilder s = DatabaseContext.Instance.GetConnectionString;
             InitializeComponent();
+            navigationFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+            NavBar.Frame = navigationFrame;
+            LoginPage page = new LoginPage();
             navigationFrame.Navigate(page);
         }
     }
