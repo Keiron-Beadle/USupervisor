@@ -12,5 +12,8 @@
             <ColumnDefinition Width="120"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <TextBlock x:Name="nameText" Grid.Column="1" FontSize="30" FontFamily="Arial" Foreground="Peru" HorizontalAlignment="Left" Margin="40,50,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="groupText" Grid.Column="1" FontSize="15" FontFamily="Arial" Foreground="Peru" HorizontalAlignment="Left" Margin="45,90,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="IDText" Grid.Column="1" FontSize="15" FontFamily="Arial" Foreground="Peru" HorizontalAlignment="Left" Margin="120,90,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
