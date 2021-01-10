@@ -63,6 +63,7 @@ namespace USupervisor
                 case "Messages":
                     break;
                 case "Meetings":
+                    Frame.Navigate(new MeetingPage());
                     break;
             }
         }        

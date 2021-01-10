@@ -8,11 +8,13 @@ namespace USupervisor.Users
 {
     class Supervisor : User
     {
-        private List<Student> assignedStudents;
+        private List<string> assignedStudents;
 
-        protected override void DeleteUser()
+        public Supervisor() : base("", "") { }
+
+        public Supervisor(string name, string email, List<string> assignedStudents) : base(name, email)
         {
-            throw new NotImplementedException();
+            this.assignedStudents = assignedStudents;
         }
     }
 }

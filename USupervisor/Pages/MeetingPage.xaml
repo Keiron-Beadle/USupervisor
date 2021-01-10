@@ -18,5 +18,12 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock x:Name="titleText" Grid.Column="1" HorizontalAlignment="Left" Margin="20,9,0,0" FontSize="30" Foreground="Peru" VerticalAlignment="Top"/>
+        <!--<Rectangle Grid.Column="1" Fill="#4e5196" HorizontalAlignment="Left" Height="70" Margin="20,20,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="447"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" FontSize="15" Foreground="White" Margin="30,25,0,0" Grid.Row="1" Text="Meeting with Chad" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" FontSize="12" Foreground="Peru" Margin="30,50,0,0" Grid.Row="1" Text="10/01/21 - 9:00" VerticalAlignment="Top"/>
+        <Rectangle Grid.Column="1" Fill="#2c2f70" HorizontalAlignment="Left" Height="58" Margin="206,26,0,0" Grid.Row="1" VerticalAlignment="Top" Width="215"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" FontSize="10" Foreground="White" Margin="209,28,0,0" Grid.Row="1" Text="Attendees" VerticalAlignment="Top"/>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="426,40,0,0" Grid.Row="1" VerticalAlignment="Top" Width="35" Height="35"/>-->
+
     </Grid>
 </Page>

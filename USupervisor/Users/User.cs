@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace USupervisor
 {
-    public abstract class User 
+    public class User 
     {
         protected string name;
         protected string email;
+
+        public User(string name, string email)
+        {
+            this.name = name;
+            this.email = email;
+        }
+
         public void SetName(string input)
         {
             name = input;
@@ -20,6 +27,5 @@ namespace USupervisor
         }
         public string Name { get { return name; } }
         public string Email { get { return email; } }
-        protected abstract void DeleteUser();
     }
 }
