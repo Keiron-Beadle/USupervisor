@@ -71,7 +71,7 @@ namespace USupervisor
 
         private void JoinBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Data.Frame.Navigate(new InProgressMeeting());
         }
 
         private void MakeAttendeesTitle(Grid mainGrid, int yPos)
