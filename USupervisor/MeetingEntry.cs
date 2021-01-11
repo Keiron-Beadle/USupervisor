@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using USupervisor.Pages;
 
 namespace USupervisor
 {
@@ -71,7 +72,7 @@ namespace USupervisor
 
         private void JoinBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Data.Frame.Navigate(new InProgressMeeting());
+            Data.Frame.Navigate(new InProgressMeetingPage());
         }
 
         private void MakeAttendeesTitle(Grid mainGrid, int yPos)

@@ -1,0 +1,20 @@
+﻿<Page x:Class="USupervisor.Pages.InProgressMeetingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:USupervisor.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Background="#262742"
+      Title="USupervisor - In Meeting" Height="550" Width="1000">
+
+    <Grid x:Name="mainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="chatHistory" Grid.Column="1" HorizontalAlignment="Left" Height="441" Margin="10,10,0,0" VerticalAlignment="Top" Width="827" Background="#4e5196" IsSynchronizedWithCurrentItem="True" FontSize="16"/>
+        <TextBox x:Name="messageBox" Foreground="White" FontSize="16" Grid.Column="1" HorizontalAlignment="Left" Height="38" Margin="10,466,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="827" Background="Peru" KeyDown="MessageBox_KeyDown"/>
+    </Grid>
+</Page>
