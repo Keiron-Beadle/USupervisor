@@ -56,6 +56,9 @@ namespace USupervisor.Pages
         public InProgressMeetingPage()
         {
             InitializeComponent();
+            NavBar navBar = new NavBar("InProgressMeeting");
+
+            navBar.SetGrid(mainGrid);
             NoArgDelegate exec = new NoArgDelegate(this.ConnectToMesh);
             exec.BeginInvoke(null, null);
         }

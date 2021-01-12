@@ -11,27 +11,26 @@ namespace USupervisor
 {
     public class NavBar : FrameworkElement
     {
-        public static Frame Frame;
+        public static Frame Frame = Data.Frame;
         private static Button[] pages;
         private string currentPage;
 
         public NavBar(string inCurrentPage)
         {
             currentPage = inCurrentPage;
-            pages = new Button[3];
-            pages[0] = new Button();
-            pages[1] = new Button();
-            pages[2] = new Button();
+            pages = new Button[4];
+            for (int i = 0; i < pages.Length; i++) { pages[i] = new Button(); }
             pages[0].Content = "Home";
             pages[1].Content = "Messages";
             pages[2].Content = "Meetings";
+            pages[3].Content = "Log Out";
 
             for (int i = 0; i < pages.Length; i++)
             {
                 pages[i].FontSize = 15;
                 pages[i].HorizontalAlignment = HorizontalAlignment.Center;
                 pages[i].VerticalAlignment = VerticalAlignment.Top;
-                pages[i].Margin = new Thickness(0, 60 + (50 * i), 0, 0);
+                pages[i].Margin = new Thickness(0, 20 + (50 * i), 0, 0);
                 pages[i].Width = 80;
                 pages[i].Click += NavBar_Click;
                 pages[i].Height = 30;
@@ -40,12 +39,12 @@ namespace USupervisor
 
         public void SetGrid(Grid grid)
         {
-            Grid.SetColumn(pages[0], 0);
-            Grid.SetColumn(pages[1], 0);
-            Grid.SetColumn(pages[2], 0);
-            grid.Children.Add(pages[0]);
-            grid.Children.Add(pages[1]);
-            grid.Children.Add(pages[2]);
+            for (int i = 0; i < pages.Length; i++)
+            {
+                Grid.SetColumn(pages[i], 0);
+                Grid.SetRowSpan(pages[i], 2);
+                grid.Children.Add(pages[i]);
+            }
         }
 
         private void NavBar_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -64,6 +63,10 @@ namespace USupervisor
                     break;
                 case "Meetings":
                     Frame.Navigate(new MeetingPage());
+                    break;
+                case "Log Out":
+                    Data.User = null;
+                    Frame.Navigate(new LoginPage());
                     break;
             }
         }        

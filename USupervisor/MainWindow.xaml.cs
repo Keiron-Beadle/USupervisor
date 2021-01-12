@@ -25,9 +25,45 @@ namespace USupervisor
             InitializeComponent();
             navigationFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
             Data.Frame = navigationFrame;
-            NavBar.Frame = navigationFrame;
             LoginPage page = new LoginPage();
-            navigationFrame.Navigate(page);
+            if (System.IO.File.Exists("user"))
+            { RememberedUser(ref page); }
+            else { navigationFrame.Navigate(page); }
+           
+            Closed += MainWindow_Closed;
+        }
+
+        private void RememberedUser(ref LoginPage page)
+        {
+            using (System.IO.StreamReader s = new System.IO.StreamReader("user"))
+            {
+                string[] line = s.ReadLine().Split(',');
+                page = new LoginPage(line[0], line[1]);
+            }
+            System.IO.File.Delete("user");
+        }
+
+        private void MainWindow_Closed(object sender, EventArgs e)
+        {
+            if (Data.User != null)
+            {
+                using (System.IO.StreamWriter s = new System.IO.StreamWriter("user"))
+                {
+                    using (var connection = new SqliteConnection(Database.Instance.GetConnectionString.ConnectionString))
+                    {
+                        connection.Open();
+                        var cmd = connection.CreateCommand();
+                        cmd.CommandText = "SELECT password FROM Users WHERE email IS " + ("'" + Data.User.Email + "'");
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                s.WriteLine(Data.User.Email + "," + reader["password"]);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

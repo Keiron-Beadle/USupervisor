@@ -50,7 +50,7 @@ namespace USupervisor.Pages
             createMeeting.HorizontalAlignment = HorizontalAlignment.Left;
             createMeeting.VerticalAlignment = VerticalAlignment.Top;
             createMeeting.Click += CreateMeeting_Click;
-
+            createMeeting.Margin = new Thickness(750, 10, 0, 0);
             mainGrid.Children.Add(createMeeting);
         }
 

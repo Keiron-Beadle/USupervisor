@@ -17,6 +17,13 @@ namespace USupervisor.Pages
             InitializeComponent();
         }
 
+        public LoginPage(string email, string password) : this()
+        {
+            emailBox.Text = email;
+            passwordBox.Password = password;
+            SubmitBtn_Click(this, null);
+        }
+
         private void SubmitBtn_Click(object sender, RoutedEventArgs e)
         {
             string email = emailBox.Text;
@@ -51,7 +58,7 @@ namespace USupervisor.Pages
                     FillUserData(currentUser, email);
                     Data.User = currentUser;
                     HomePage page = new HomePage();
-                    NavBar.Frame.Navigate(page);
+                    Data.Frame.Navigate(page);
                     break;
                 case 1:
                     Debug.WriteLine("Not in database");
