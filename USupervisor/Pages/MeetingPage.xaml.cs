@@ -31,6 +31,33 @@ namespace USupervisor.Pages
             titleText.Text = Data.User.Name + "'s Meetings";
 
             PopulateMeetings();
+
+            if(Data.User.Group == "Supervisor")
+            {
+                BuildCreateMeetingButton();
+            }
+        }
+
+        private void BuildCreateMeetingButton()
+        {
+            //<Button Content="Create Meeting" Grid.Column="1" HorizontalAlignment="Left" Margin="710,25,0,0" Grid.Row="1" VerticalAlignment="Top" Width="104" Height="26"/>
+            Button createMeeting = new Button();
+            createMeeting.Content = "Create Meeting";
+            createMeeting.Width = 100;
+            createMeeting.Height = 26;
+            Grid.SetRow(createMeeting, 1);
+            Grid.SetColumn(createMeeting, 1);
+            createMeeting.HorizontalAlignment = HorizontalAlignment.Left;
+            createMeeting.VerticalAlignment = VerticalAlignment.Top;
+            createMeeting.Click += CreateMeeting_Click;
+
+            mainGrid.Children.Add(createMeeting);
+        }
+
+        private void CreateMeeting_Click(object sender, RoutedEventArgs e)
+        {
+            CreateMeetingPanel cmp = new CreateMeetingPanel();
+            cmp.Show();
         }
 
         private void PopulateMeetings()
@@ -53,7 +80,7 @@ namespace USupervisor.Pages
 
                         for (int i = 0; i < attendeesString.Length; i++)
                         {
-                            User attendee = new User("","");
+                            User attendee = new User("","", "");
                             attendee.SetEmail(attendeesString[i]);
                             PopulateAttendeeInfo(ref attendee, connection);
                             attendees.Add(attendee);

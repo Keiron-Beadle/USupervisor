@@ -40,10 +40,13 @@ namespace USupervisor.Pages
                     if (databaseReturn.Item2 == "Supervisor")
                     {
                         currentUser = new Users.Supervisor();
+                        currentUser.Group = "Supervisor";
                     }
                     else if (databaseReturn.Item2 == "Student")
                     {
                         currentUser = new Users.Student();
+                        currentUser.Group = "Student";
+
                     }
                     FillUserData(currentUser, email);
                     Data.User = currentUser;

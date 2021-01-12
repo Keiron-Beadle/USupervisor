@@ -11,9 +11,9 @@ namespace USupervisor.Users
         private int studentID;
         private string personalSupervisor;
 
-        public Student() : base("","") { }
+        public Student() : base("","","") { }
 
-        public Student(string name, string email, int studentID, string pSupervisor) : base(name, email)
+        public Student(string name, string email, int studentID, string pSupervisor) : base(name, email, "Student")
         {
             this.studentID = studentID;
             personalSupervisor = pSupervisor;

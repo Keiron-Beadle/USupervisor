@@ -10,9 +10,9 @@ namespace USupervisor.Users
     {
         private List<string> assignedStudents;
 
-        public Supervisor() : base("", "") { }
+        public Supervisor() : base("", "", "") { }
 
-        public Supervisor(string name, string email, List<string> assignedStudents) : base(name, email)
+        public Supervisor(string name, string email, List<string> assignedStudents) : base(name, email, "Supervisor")
         {
             this.assignedStudents = assignedStudents;
         }
