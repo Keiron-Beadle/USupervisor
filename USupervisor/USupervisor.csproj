@@ -104,6 +104,9 @@
     <Compile Include="Pages\CreateMeetingPanel.xaml.cs">
       <DependentUpon>CreateMeetingPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CreateMessagePanel.xaml.cs">
+      <DependentUpon>CreateMessagePanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -144,6 +147,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\CreateMeetingPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CreateMessagePanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

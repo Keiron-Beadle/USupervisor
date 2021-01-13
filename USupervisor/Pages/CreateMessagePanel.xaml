@@ -1,0 +1,22 @@
+﻿<Window x:Class="USupervisor.Pages.CreateMessagePanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:USupervisor.Pages"
+        mc:Ignorable="d"
+        Background="#262742"
+        Title="USupervisor - Create Message" Height="470" Width="570" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="recipientTxt" HorizontalAlignment="Left" Height="21" Margin="100,2,0,0" VerticalAlignment="Center" Width="221"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="16" Text="Recipient:" Foreground="Peru" Margin="10, 0,0,0" VerticalAlignment="Center"/>
+        <TextBox x:Name="messageTxt" HorizontalAlignment="Left" Height="307" Margin="10,37,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="524"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="16" Text="Message:" Foreground="Peru" Margin="10,10,0,369" VerticalAlignment="Center" Grid.Row="1"/>
+        <Button Content="Send" HorizontalAlignment="Left" Margin="457,349,0,0" Grid.Row="1" VerticalAlignment="Top" Width="77" Height="22" Click="Send_Clicked"/>
+
+    </Grid>
+</Window>

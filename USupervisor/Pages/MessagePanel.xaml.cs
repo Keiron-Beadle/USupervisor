@@ -23,10 +23,12 @@ namespace USupervisor.Pages
     public partial class MessagePanel : Window
     {
         private int ID;
+        private string sender;
 
         public MessagePanel(string sender, string message, int ID)
         {
             this.ID = ID;
+            this.sender = sender;
             InitializeComponent();
             Dispatcher.CurrentDispatcher.Invoke(() =>
             {
@@ -37,7 +39,9 @@ namespace USupervisor.Pages
 
         private void Reply_Click(object sender, RoutedEventArgs e)
         {
-
+            CreateMessagePanel cmp = new CreateMessagePanel(this.sender);
+            cmp.Show();
+            Close();
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
@@ -50,7 +54,7 @@ namespace USupervisor.Pages
                 cmd.CommandText = "DELETE FROM Messages WHERE ID IS " + ("'" + ID.ToString() + "'");
                 cmd.ExecuteNonQuery();
             }
-            
+            Close();
         }
     }
 }

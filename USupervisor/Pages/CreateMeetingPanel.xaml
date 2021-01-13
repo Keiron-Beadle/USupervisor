@@ -7,7 +7,7 @@
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf" x:Class="USupervisor.Pages.CreateMeetingPanel"
         mc:Ignorable="d"
         Background="#262742"
-        Title="USupervisor - Create Meeting" Height="450" Width="550">
+        Title="USupervisor - Create Meeting" Height="450" Width="550" ResizeMode="NoResize">
     <Grid>
         <Label Content="Meeting Title:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="Peru" FontSize="15" FontWeight="Medium"/>
         <Label Content="Date &amp; Time:" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Foreground="Peru" FontSize="15" FontWeight="Medium"/>
