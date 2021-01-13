@@ -58,7 +58,7 @@ namespace USupervisor
             joinBtn.Background = null;
             joinBtn.Content = new Image
             {
-                Source = new BitmapImage(new Uri(@"C:\Users\Keiro\Desktop\USupervisor\USupervisor\Resources\joinCallIcon.png")),
+                Source = new BitmapImage(new Uri("pack://application:,,,/Images/joinCallIcon.png")),
                 VerticalAlignment = System.Windows.VerticalAlignment.Center
             };
             joinBtn.Click += JoinBtn_Click;

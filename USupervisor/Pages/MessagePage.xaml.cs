@@ -33,7 +33,7 @@ namespace USupervisor.Pages
             inboxBtn.Click += InboxBtn_Click;
             inboxBtn.Content = new Image
             {
-                Source = new BitmapImage(new Uri(@"C:\Users\Keiro\Desktop\USupervisor\USupervisor\Resources\inboxIcon.png")),
+                Source = new BitmapImage(new Uri("pack://application:,,,/Images/inboxIcon.png")),
                 VerticalAlignment = VerticalAlignment.Center
             };
 
@@ -42,7 +42,7 @@ namespace USupervisor.Pages
             outboxBtn.Click += OutboxBtn_Click;
             outboxBtn.Content = new Image
             {
-                Source = new BitmapImage(new Uri(@"C:\Users\Keiro\Desktop\USupervisor\USupervisor\Resources\outboxIcon.png")),
+                Source = new BitmapImage(new Uri("pack://application:,,,/Images/outboxIcon.png")),
                 VerticalAlignment = VerticalAlignment.Center
             };
 
