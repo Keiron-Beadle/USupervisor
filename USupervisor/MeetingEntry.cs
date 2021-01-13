@@ -27,15 +27,11 @@ namespace USupervisor
             int yPos = (height + 10) * counter;
 
             MakeBackground(mainGrid, height, yPos);
-
             MakeTitleText(mainGrid, yPos);
-
             MakeDateTimeText(mainGrid, yPos);
-
             MakeAttendeesBox(mainGrid, yPos);
-
             MakeAttendeesTitle(mainGrid, yPos);
-
+            MakeAttendeesStackPanel(mainGrid, yPos);
             MakeJoinButton(mainGrid, yPos);
 
             /*
@@ -46,6 +42,33 @@ namespace USupervisor
 
 
 
+        }
+
+        private void MakeAttendeesStackPanel(Grid mainGrid, int yPos)
+        {
+            StackPanel stack = new StackPanel();
+            Grid.SetColumn(stack, 1);
+            stack.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
+            stack.Height = 43;
+            stack.Margin = new System.Windows.Thickness(209, 20 + yPos, 0, 0);
+            Grid.SetRow(stack, 1);
+            stack.VerticalAlignment = System.Windows.VerticalAlignment.Top;
+            stack.Width = 212;
+
+            TextBlock[] attendeesArray = new TextBlock[attendees.Count];
+            for (int i = 0; i < attendeesArray.Length; i++)
+            {
+                attendeesArray[i] = new TextBlock()
+                {
+                    Text = attendees[i].Name,
+                    MaxHeight = 20,
+                    MaxWidth = 120,
+                    FontSize = 10,
+                    Foreground = new SolidColorBrush(Colors.White),
+                };
+                stack.Children.Add(attendeesArray[i]);
+            }
+            mainGrid.Children.Add(stack);
         }
 
         private void MakeJoinButton(Grid mainGrid, int yPos)

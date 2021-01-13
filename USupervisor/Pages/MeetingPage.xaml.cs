@@ -99,6 +99,7 @@ namespace USupervisor.Pages
 
         private void PopulateAttendeeInfo(ref User attendee, SqliteConnection connection)
         {
+            if (attendee.Email == null) { return; }
             var selectCmd = connection.CreateCommand();
             string email = "'" + attendee.Email + "'";
             selectCmd.CommandText = ("SELECT * FROM Users WHERE email IS " + email);
@@ -109,10 +110,10 @@ namespace USupervisor.Pages
                     switch (reader["group"])
                     {
                         case "Supervisor":
-                            attendee = new Supervisor(attendee.Name, attendee.Email, GetAssignedStudents(email, connection));
+                            attendee = new Supervisor(reader["name"].ToString(), attendee.Email, GetAssignedStudents(email, connection));
                             break;
                         case "Student":
-                            attendee = new Student(attendee.Name, attendee.Email, GetStudentID(email, connection), GetStudentSupervisor(email,connection));
+                            attendee = new Student(reader["name"].ToString(), attendee.Email, GetStudentID(email, connection), GetStudentSupervisor(email,connection));
                             break;
                     }
                 }
