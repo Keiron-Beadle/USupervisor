@@ -15,6 +15,8 @@ namespace USupervisor
         private static Button[] pages;
         private string currentPage;
 
+        public double MinimumYPosition { get; private set; }
+
         public NavBar(string inCurrentPage)
         {
             currentPage = inCurrentPage;
@@ -27,13 +29,15 @@ namespace USupervisor
 
             for (int i = 0; i < pages.Length; i++)
             {
+                int yPos = 20 + (50 * i);
                 pages[i].FontSize = 15;
                 pages[i].HorizontalAlignment = HorizontalAlignment.Center;
                 pages[i].VerticalAlignment = VerticalAlignment.Top;
-                pages[i].Margin = new Thickness(0, 20 + (50 * i), 0, 0);
+                pages[i].Margin = new Thickness(0, yPos, 0, 0);
                 pages[i].Width = 80;
                 pages[i].Click += NavBar_Click;
                 pages[i].Height = 30;
+                MinimumYPosition = yPos + pages[i].Height;
             }
         }
 
@@ -60,6 +64,7 @@ namespace USupervisor
                     Frame.Navigate(new HomePage());
                     break;
                 case "Messages":
+                    Frame.Navigate(new MessagePage());
                     break;
                 case "Meetings":
                     Frame.Navigate(new MeetingPage());

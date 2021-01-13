@@ -55,6 +55,7 @@ namespace USupervisor
             Button joinBtn = new Button();
             Grid.SetRow(joinBtn, 1);
             Grid.SetColumn(joinBtn, 1);
+            joinBtn.Background = null;
             joinBtn.Content = new Image
             {
                 Source = new BitmapImage(new Uri(@"C:\Users\Keiro\Desktop\USupervisor\USupervisor\Resources\joinCallIcon.png")),

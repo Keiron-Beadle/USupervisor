@@ -1,0 +1,17 @@
+﻿<Page x:Class="USupervisor.Pages.Inbox"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d" 
+      Background="#262742"
+      Title="USupervisor - Inbox" Height="550" Width="1000">
+
+    <Grid x:Name="mainGrid">
+        <!--<Rectangle Fill="#4247ad" HorizontalAlignment="Left" Height="42" Margin="20,10,0,0" VerticalAlignment="Top" Width="500"/>
+        <TextBlock x:Name="senderTxt" HorizontalAlignment="Left" Margin="30,13,0,0" FontSize="13" Foreground="White" VerticalAlignment="Top"/>
+        <TextBlock x:Name="sendDateTxt" HorizontalAlignment="Left" Margin="415,13,0,0" FontSize="13" Foreground="Peru" VerticalAlignment="Top"/>
+        <TextBlock x:Name="previewMsgTxt" Foreground="White" HorizontalAlignment="Left" Margin="30,30,0,0" MaxWidth="450" VerticalAlignment="Top"/>-->
+
+    </Grid>
+</Page>
