@@ -5,7 +5,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d" 
       Background="#262742"
-      Title="USupervisor - Inbox" Height="550" Width="1000">
+      Title="USupervisor - Inbox" Height="490" Width="880">
 
     <Grid x:Name="mainGrid">
         <!--<Rectangle Fill="#4247ad" HorizontalAlignment="Left" Height="42" Margin="20,10,0,0" VerticalAlignment="Top" Width="500"/>

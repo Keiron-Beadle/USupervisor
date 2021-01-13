@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.Sqlite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,25 @@ namespace USupervisor.Pages
         public Outbox()
         {
             InitializeComponent();
+            List<Mail> mailbox = new List<Mail>();
+            using (var cnn = new SqliteConnection(Database.Instance.GetConnectionString.ConnectionString))
+            {
+                cnn.Open();
+                var cmd = cnn.CreateCommand();
+                cmd.CommandText = "SELECT * FROM Messages WHERE sender IS " + ("'" + Data.User.Email + "'");
+                using (var reader = cmd.ExecuteReader())
+                {
+                    int counter = 1;
+                    while (reader.Read())
+                    {
+                        DateTime date = DateTime.Parse(reader["sendDate"].ToString());
+                        int id = int.Parse(reader["ID"].ToString());
+                        mailbox.Add(new Mail((string)reader["recipient"], (string)reader["sender"], (string)reader["message"], date,
+                            id, mainGrid, counter));
+                        counter++;
+                    }
+                }
+            }
         }
     }
 }

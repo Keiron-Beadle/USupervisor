@@ -49,7 +49,7 @@ namespace USupervisor
                 Width = 500,
                 Height = 42,
                 Background = null,
-                Margin = new Thickness(20, 10, 0, 0),
+                Margin = new Thickness(20, 10 + yPos, 0, 0),
                 HorizontalAlignment = HorizontalAlignment.Left,
                 VerticalAlignment = VerticalAlignment.Top
             };
@@ -65,7 +65,7 @@ namespace USupervisor
                 Fill = new SolidColorBrush(Color.FromRgb(66, 71, 173)),
                 HorizontalAlignment = HorizontalAlignment.Left,
                 Height = 42,
-                Margin = new Thickness(20, 10, 0, 0),
+                Margin = new Thickness(20, 10 + yPos, 0, 0),
                 VerticalAlignment = VerticalAlignment.Top,
                 Width = 500
             };
@@ -77,7 +77,7 @@ namespace USupervisor
             TextBlock txt = new TextBlock()
             {
                 HorizontalAlignment = HorizontalAlignment.Left,
-                Margin = new Thickness(30, 13, 0, 0),
+                Margin = new Thickness(30, 13 + yPos, 0, 0),
                 FontSize = 13,
                 Foreground = new SolidColorBrush(Colors.White),
                 VerticalAlignment = VerticalAlignment.Top,
@@ -91,7 +91,7 @@ namespace USupervisor
             TextBlock txt = new TextBlock()
             {
                 HorizontalAlignment = HorizontalAlignment.Left,
-                Margin = new Thickness(400, 13, 0, 0),
+                Margin = new Thickness(400, 13 + yPos, 0, 0),
                 FontSize = 13,
                 Foreground = new SolidColorBrush(Colors.Peru),
                 VerticalAlignment = VerticalAlignment.Top,
@@ -106,7 +106,7 @@ namespace USupervisor
             {
                 Foreground = new SolidColorBrush(Colors.White),
                 HorizontalAlignment = HorizontalAlignment.Left,
-                Margin = new Thickness(30, 30, 0, 0),
+                Margin = new Thickness(30, 30 + yPos, 0, 0),
                 MaxWidth = 450,
                 MaxHeight= 30,
                 VerticalAlignment = VerticalAlignment.Top,
