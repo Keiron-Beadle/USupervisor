@@ -46,7 +46,15 @@ namespace USupervisor.Pages
                 VerticalAlignment = VerticalAlignment.Center
             };
 
+            createMessageBtn.Click += CreateMessageBtn_Click;
+
             UpdateMessageState();
+        }
+
+        private void CreateMessageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CreateMessagePanel cmp = new CreateMessagePanel();
+            cmp.Show();
         }
 
         private void OutboxBtn_Click(object sender, RoutedEventArgs e)
