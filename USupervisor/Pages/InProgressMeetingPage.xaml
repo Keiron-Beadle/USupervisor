@@ -16,5 +16,6 @@
         </Grid.ColumnDefinitions>
         <ListBox x:Name="chatHistory" Grid.Column="1" HorizontalAlignment="Left" Height="441" Margin="10,10,0,0" VerticalAlignment="Top" Width="827" Background="#4e5196" IsSynchronizedWithCurrentItem="True" FontSize="16"/>
         <TextBox x:Name="messageBox" Foreground="White" FontSize="16" Grid.Column="1" HorizontalAlignment="Left" Height="38" Margin="10,466,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="827" Background="Peru" KeyDown="MessageBox_KeyDown"/>
+        <Button Content="Leave" HorizontalAlignment="Left" Margin="30,475,0,0" VerticalAlignment="Top" Width="60" Height="19" Click="Leave_Clicked"/>
     </Grid>
 </Page>

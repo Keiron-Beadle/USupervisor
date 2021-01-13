@@ -78,7 +78,12 @@ namespace USupervisor.Pages
 
         private void stat_Offline(object sender, EventArgs e)
         {
-
+        //    this.Dispatcher.BeginInvoke(DispatcherPriority.Normal,
+        //        (DispatcherOperationCallback)delegate (object arg)
+        //        {
+        //            participant.Leave(member);
+        //            return null;
+        //        }, null);
         }
 
         private void stat_Online(object sender, EventArgs e)
@@ -131,6 +136,13 @@ namespace USupervisor.Pages
                 participant.Chat(member, messageBox.Text);
                 messageBox.Clear();
             }
+        }
+
+        private void Leave_Clicked(object sender, RoutedEventArgs e)
+        {
+            participant.Leave(member);
+            participant.Dispose();
+            Data.Frame.Navigate(new MeetingPage());
         }
     }
 }
