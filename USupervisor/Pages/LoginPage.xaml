@@ -13,5 +13,6 @@
         <TextBox x:Name="emailBox" Margin="0,-100,0,0" HorizontalAlignment="Center" Height="22" TextWrapping="NoWrap" VerticalAlignment="Center" Width="180"/>
         <PasswordBox x:Name="passwordBox" Margin="0,-40,0,0" Width="180" Height="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Button x:Name="submitBtn" Click="SubmitBtn_Click" Margin="0,30,0,0" Content="Submit" HorizontalAlignment="Center" VerticalAlignment="Center" Width="105" Height="30"/>
+        <TextBlock x:Name="errorTxt" HorizontalAlignment="Center" Margin="0,100,0,0" Foreground="Red" VerticalAlignment="Top"/>
     </Grid>
 </Page>

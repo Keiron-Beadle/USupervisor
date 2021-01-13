@@ -31,12 +31,14 @@ namespace USupervisor.Pages
 
             if (string.IsNullOrEmpty(email))
             {
-                Debug.WriteLine("Null or empty email");
+                errorTxt.Text = "Enter something in 'Email'";
+                //Debug.WriteLine("Null or empty email");
                 return;
             }
             else if (string.IsNullOrEmpty(password))
             {
-                Debug.WriteLine("Null or empty password");
+                errorTxt.Text = "Enter something in 'Password'";
+                //Debug.WriteLine("Null or empty password");
                 return;
             }
             Tuple<int, string> databaseReturn = InDatabase(email, password);
@@ -61,10 +63,12 @@ namespace USupervisor.Pages
                     Data.Frame.Navigate(page);
                     break;
                 case 1:
-                    Debug.WriteLine("Not in database");
+                    errorTxt.Text = "Login credentials not found in database!";
+                    //Debug.WriteLine("Not in database");
                     break;
                 case 2:
-                    Debug.WriteLine("Wrong password");
+                    errorTxt.Text = "Wrong password!";
+                    //Debug.WriteLine("Wrong password");
                     break;
             }
         }
