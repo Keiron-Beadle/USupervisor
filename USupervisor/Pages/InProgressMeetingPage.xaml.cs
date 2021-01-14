@@ -19,8 +19,8 @@ using System.Windows.Threading;
 namespace USupervisor.Pages
 {
     #region Service Interfaces
-    //this is our simple service contract
-    [ServiceContract(Namespace = "http://rolandrodriguez.net.samples.wpfchat", CallbackContract = typeof(IChat))]
+
+    [ServiceContract(Namespace = "USupervisor.Chat.Service", CallbackContract = typeof(IChat))]
     public interface IChat
     {
         [OperationContract(IsOneWay = true)]
@@ -36,8 +36,6 @@ namespace USupervisor.Pages
         void InitialiseMesh();
     }
 
-    //this channel interface provides a multiple inheritence adapter for our channel factory
-    //that aggregates the two interfaces need to create the channel
     public interface IChatChannel : IChat, IClientChannel
     {
     }
@@ -57,7 +55,7 @@ namespace USupervisor.Pages
         {
             InitializeComponent();
             NavBar navBar = new NavBar("InProgressMeeting");
-
+            navBar.Disable();
             navBar.SetGrid(mainGrid);
             NoArgDelegate exec = new NoArgDelegate(this.ConnectToMesh);
             exec.BeginInvoke(null, null);

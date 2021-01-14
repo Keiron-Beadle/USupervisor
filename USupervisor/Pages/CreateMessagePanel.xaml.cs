@@ -36,9 +36,31 @@ namespace USupervisor.Pages
 
         private void Send_Clicked(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(recipientTxt.Text) || string.IsNullOrEmpty(recipientTxt.Text))
+            {
+                errorTxt.Text = "Error: Input a recipient!";
+                return;
+            }
+            if (string.IsNullOrEmpty(messageTxt.Text) || string.IsNullOrWhiteSpace(messageTxt.Text))
+            {
+                errorTxt.Text = "Error: Input a message!";
+                return;
+            }
             using (var cnn = new SqliteConnection(Database.Instance.GetConnectionString.ConnectionString))
             {
                 cnn.Open();
+
+                var selectUser = cnn.CreateCommand();
+                selectUser.CommandText = "SELECT * FROM Users WHERE email IS " + "'" + recipientTxt.Text + "'";
+                using (var reader = selectUser.ExecuteReader())
+                {
+                    if (!reader.HasRows)
+                    {
+                        errorTxt.Text = "Error: No User found with that address.";
+                        return;
+                    }
+                }
+
                 var transaction = cnn.BeginTransaction();
                 var selectCmd = cnn.CreateCommand();
                 selectCmd.CommandText = "SELECT * From Messages ORDER BY ID DESC LIMIT 1";

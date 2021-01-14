@@ -14,8 +14,11 @@ namespace USupervisor
         public static Frame Frame = Data.Frame;
         private static Button[] pages;
         private string currentPage;
+        private bool enabled = true;
 
         public double MinimumYPosition { get; private set; }
+
+        public bool Enabled { get { return enabled; } set { enabled = value; } }
 
         public NavBar(string inCurrentPage)
         {
@@ -49,6 +52,18 @@ namespace USupervisor
                 Grid.SetRowSpan(pages[i], 2);
                 grid.Children.Add(pages[i]);
             }
+        }
+
+        public void Disable()
+        {
+            for (int i = 0; i < 3; i++)
+                pages[i].IsEnabled = false;
+        }
+
+        public void Enable()
+        {
+            for (int i = 0; i < 3; i++)
+                pages[i].IsEnabled = true;
         }
 
         private void NavBar_Click(object sender, System.Windows.RoutedEventArgs e)
